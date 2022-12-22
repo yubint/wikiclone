@@ -1,0 +1,21 @@
+{% extends 'encyclopedia/basenewold.html' %}
+
+{% block title %}
+Edit {{ title }}
+{% endblock %}
+
+{% block heading %}
+Edit {{ title }}
+{% endblock %}
+
+{% block action %}
+{% url 'edit' title %}
+{% endblock %}
+
+{% block disabled %}
+hidden
+{% endblock %}
+
+{% block entry_value %}
+{{ entry }}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'encyclopedia/layout.html' %}
+
+{% block body %}
+<h1>{% block heading %}{% endblock %}</h1>
+<div class="col">
+    <form action={% block action %}{% endblock %} method="post">
+        {% csrf_token %}
+        <input class="form-control mb-3" type="text" {% block disabled %}{% endblock %} placeholder="Enter the Title"
+            autocomplete="off" name="title">
+        <label for="markdown-entry">Enter your Markdown here</label> <br>
+        <textarea id="markdown-entry" name="entry">{% block entry_value %}{% endblock %}</textarea>
+        <button type="submit" class="btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}
