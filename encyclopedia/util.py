@@ -37,13 +37,22 @@ def get_entry(title):
     except FileNotFoundError:
         return None
 
-def render_error(request, error):
+def render_error(request, error: str):
+    """
+    Takes an error message and returns an response with the rendered
+    error page.
+    """
     return render(request, 'encyclopedia/error.html', {
         'error': error
     })
 
-def render_entry(request, title, html):
+def render_entry(request, title: str, html: str):
+    """
+    Takes a title and html for an entry page and returns an response with
+    the rendered entry page.
+    """
     return render(request, 'encyclopedia/entry.html', {
         'title': title,
         'html': html
     })
+    
